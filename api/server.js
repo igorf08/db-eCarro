@@ -2,6 +2,13 @@ const jsonServer = require('json-server')
 
 const server = jsonServer.create()
 
+const cors = require('cors');
+
+const allowedOrigins = ['https://e-carro-souenergy.vercel.app/']; 
+const corsOption = {
+    origin: allowedOrigins,
+};
+
 const fs = require('fs')
 const path = require('path')
 const filePath = path.join('db.json')
@@ -12,6 +19,7 @@ const router = jsonServer.router(db)
 
 const middlewares = jsonServer.defaults()
 
+server.use(cors(corsOption));
 server.use(middlewares)
 server.use(jsonServer.rewriter({
     '/api/*': '/$1',
