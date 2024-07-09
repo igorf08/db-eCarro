@@ -11,7 +11,8 @@ const allowedOrigins = [
     
 ]; 
 const corsOption = {
-    origin: allowedOrigins,
+    origin: "*",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
 };
 
 const fs = require('fs')
