@@ -4,7 +4,12 @@ const server = jsonServer.create()
 
 const cors = require('cors');
 
-const allowedOrigins = ['https://e-carro-souenergy.vercel.app/']; 
+const allowedOrigins = [
+    'https://e-carro-souenergy.vercel.app/',
+    'https://e-carro-souenergy.vercel.app/administracao',
+    'https://e-carro-souenergy.vercel.app/administracao/criar',
+    
+]; 
 const corsOption = {
     origin: allowedOrigins,
 };
