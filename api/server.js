@@ -15,7 +15,6 @@ const filePath = path.join('db.json')
 const data = fs.readFileSync(filePath, "utf-8");
 const db = JSON.parse(data);
 const router = jsonServer.router(db)
- router = jsonServer.router('db.json')
 
 const middlewares = jsonServer.defaults()
 
